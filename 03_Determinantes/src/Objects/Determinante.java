@@ -11,15 +11,15 @@ package Objects;
  */
 public class Determinante {
     
-    public Integer determinante(int[][] det, Integer tamano) {
-        Integer determinante = 0;
+    public Integer determinante(int[][] det, Integer tam) {
+        Integer deter = 0;
 
-        if (tamano == 1) {
+        if (tam == 1) {
             return det[0][0];
         } else {
             int signo = 1;
-            for (int i = 0; i < tamano; i++) {
-                determinante += signo * (det[0][i] * determinante(submatriz(det, 0, i, tamano), tamano - 1));
+            for (int i = 0; i < tam; i++) {
+                deter += signo * (det[0][i] * determ(submatriz(det, 0, i, tam), tam - 1));
                 signo *= -1;
             }
         }
