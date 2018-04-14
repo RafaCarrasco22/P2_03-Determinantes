@@ -19,11 +19,11 @@ public class Determinante {
         } else {
             int signo = 1;
             for (int i = 0; i < tam; i++) {
-                deter += signo * (det[0][i] * determ(submatriz(det, 0, i, tam), tam - 1));
+                deter += signo * (det[0][i] * deter(submatriz(det, 0, i, tam), tam - 1));
                 signo *= -1;
             }
         }
-        return determinante;
+        return deter;
     }
 
     public int[][] submatriz(int[][] matriz, Integer f, Integer c, Integer size) {
